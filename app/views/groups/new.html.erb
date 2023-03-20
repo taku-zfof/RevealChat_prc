@@ -1,2 +1,10 @@
 <h1>Groups#new</h1>
 <p>Find me in app/views/groups/new.html.erb</p>
+
+
+<%= form_with model: @group do|f|%>
+<%=f.text_field :name %>
+<%= f.submit '作成' %>
+<%end%>
+
+
