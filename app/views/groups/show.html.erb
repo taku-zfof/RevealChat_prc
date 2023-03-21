@@ -6,3 +6,16 @@
 <%=user.email%>
 <%end%>
 
+<%=form_with model: @message do |f|%>
+ <%= f.text_field :content%>
+ <%= f.hidden_field :group_id, :value => @group.id %>
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+ <%= f.submit '送信' %>
+<%end%>
+
+
+<%@messages.each do |message|%>
+ <%=message.content%>
+<%end%>
+
+
